@@ -1,2 +1,1 @@
-# work-for-python-class
-作业
+python week 1 work
