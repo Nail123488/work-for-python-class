@@ -3,21 +3,19 @@ from util import read_numbers
 
 numbers = read_numbers()
 
-if len(numbers==0):
+if len(numbers) == 0:
     sys.exit("Error: no numbers provided")
-Min_val = min(numbers)
-Max_val = max(numbers)
-Mean_val = sum(numbers) / len(numbers)
-a = sorted(numbers)
-b = len(a)
-mid = b // 2
-if b%2==1:
-    Median_val=a[mid]
+a = min(numbers)
+b = max(numbers)
+c = sum(numbers) / len(numbers)
+sorted_nums = sorted(numbers)
+n = len(sorted_nums)
+mid = n // 2
+if n % 2 == 1:
+    d = sorted_nums[mid]
 else:
-    c=a[mid-1]
-    d=a[mid]
-    Median_val=(c+d)/2
-print(f"Minimum = {Min_val}")
-print(f"Maximum = {Max_val}")
-print(f"Mean    = {Mean_val}")
-print(f"Median  = {Median_val}")
+    d = (sorted_nums[mid-1] + sorted_nums[mid]) / 2
+print(f"Minimum = {a}")
+print(f"Maximum = {b}")
+print(f"Mean    = {c}")
+print(f"Median  = {d}")
