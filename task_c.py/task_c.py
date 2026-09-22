@@ -1,7 +1,7 @@
 import sys
 from util import read_numbers
 
-numbers = read_numbers
+numbers = read_numbers()
 if len(numbers==0):
     sys.exit("Error: no numbers provided")
 Maximum = max(numbers)
