@@ -5,8 +5,8 @@ numbers = read_numbers()
 
 if len(numbers==0):
     sys.exit("Error: no numbers provided")
-Max_val = max(numbers)
 Min_val = min(numbers)
+Max_val = max(numbers)
 Mean_val = sum(numbers) / len(numbers)
 a = sorted(numbers)
 b = len(a)
