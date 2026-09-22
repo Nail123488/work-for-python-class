@@ -7,8 +7,8 @@ except ValueError:
 if b<0 or b>100:
     sys.exit("Error:Grade must be an integer between 1 and 100")
 if b>=0 and b<=39:
-    print("(b) is a Fail")
+    print("{b} is a Fail")
 elif b>=40 and b<=69:
-    print("(b) is a Pass")
+    print("{b} is a Pass")
 elif b>=70 and b<=100:
-    print("(b) is a Distinction")
+    print("{b} is a Distinction")
