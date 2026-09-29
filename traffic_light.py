@@ -5,7 +5,7 @@ begin_idx=0
 time_state=0
 for time in range(steps):
     kind=sequence[begin_idx]
-    print(f"Time {time[:03d]} State {kind}")
+    print(f"Time {time:03d} State {kind}")
     time_state+=1
     if time_state>=states[kind]:
         begin_idx+=1
