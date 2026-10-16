@@ -1,13 +1,13 @@
 CHIP A6Q2 {
-    IN B,M,T;
-    OUT Y;
+    IN N,P,Z;
+    OUT J;
 
 
     PARTS:
-      Not(in=M, out=notM);
-      Or(a=notM, b=B, out=Orout);
-      Not(in=B, out=notB);
-      And(a=notM, b=notB, out=AndMB);
-      Or(a=Orout, b=AndMB, out=orfinal);
-      And(a=T, b=orfinal, out=Y);
+      Not(in=N, out=notN);
+      Or(a=notN, b=Z, out=orout1);
+      Not(in=notN, out=N_back);
+      Or(a=N_back, b=Z, out=orout2);
+      Or(a=orout1, b=orout2, out=orfinal)
+      And(a=P, b=orfinal, out=J)
 }
