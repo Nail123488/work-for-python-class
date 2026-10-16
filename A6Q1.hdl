@@ -1,0 +1,9 @@
+CHIP A6Q1 {
+    IN A,B;
+    OUT X;
+
+    PARTS:
+     Not(in=A, out=notA)
+     Or(a=notA, b=B ,out=orOut)
+     Not(in=orOut, out=X)
+}
