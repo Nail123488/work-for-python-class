@@ -15,19 +15,19 @@ for filename in all_file:
         for numbers in title[1:]:
             if numbers !=""
               points.append(int(numbers))
-            total=sum(points)
-            account=len(points)
-            average=total/account
-            if average >=70:
-                classification="1"
-            elif average >=60:
-                classification="2:1"
-            elif average >=50:
-                classification="2:2"
-            elif average >=40:
-                classification="3"
-            else:
-                classification="F"
+        total=sum(points)
+        account=len(points)
+        average=total/account
+        if average >=70:
+            classification="1"
+        elif average >=60:
+            classification="2:1"
+        elif average >=50:
+            classification="2:2"
+        elif average >=40:
+            classification="3"
+        else:
+            classification="F"
     with open(finish_filename,"w") as outfile:
         output_line=f"{student_id},{average:.2f},{classification}"
         outfile.write(output_line)
