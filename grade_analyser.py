@@ -1,16 +1,11 @@
-all_file=[
-    "student_data_10",
-    "student_data_25",
-    "student_data_50_A",
-    "student_data_50_B"
-]
-for filename in all_file:
-    outname=filename+"_out.csv"
-with open(filename,"r") as infile, open (finish_filename,"w") as outfile:
+filename=input("Please enter an file name:")
+outname=filename+"_out.csv"
+with open(filename,"r") as infile, open (outname,"w") as outfile:
+    next(infile)
     for line in infile:
 
         content=line.strip()
-        title=line.spilt(",")
+        title=content.split(",")
         student_id=title[0]
         points=[]
         for numbers in title[1:]:
@@ -31,4 +26,4 @@ with open(filename,"r") as infile, open (finish_filename,"w") as outfile:
             classification="F"
         out_line=f"{student_id},{average:.2f},{classification}\n"
         outfile.write(out_line)
-print(f"{filename} ->{finish_filename}")
+print(f"完成")
