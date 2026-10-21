@@ -6,7 +6,7 @@ all_file=[
 ]
 for filename in all_file:
     outname=filename+"_out.csv"
-    with open(filename,"r") as infile
+    with open(filename,"r") as infile:
     for line in infile:
         content=line.strip()
         title=line.spilt(",")
