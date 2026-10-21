@@ -2,11 +2,11 @@ all_file=[
     "student_data_10",
     "student_data_25",
     "student_data_50_A",
-    "studeny_data_50_B"
+    "student_data_50_B"
 ]
 for filename in all_file:
     outname=filename+"_out.csv"
-with open(filename,"r") as infile:
+with open(filename,"r") as infile, open (finish_filename,"w") as outfile:
     for line in infile:
 
         content=line.strip()
@@ -29,7 +29,6 @@ with open(filename,"r") as infile:
             classification="3"
         else:
             classification="F"
-with open(finish_filename,"w") as outfile:
-    output_line=f"{student_id},{average:.2f},{classification}"
-    outfile.write(output_line)
+        out_line=f"{student_id},{average:.2f},{classification}\n"
+        outfile.write(out_line)
 print(f"{filename} ->{finish_filename}")
