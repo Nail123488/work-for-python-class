@@ -1,0 +1,44 @@
+CHIP SpinDisplay{
+    IN reset,dir;
+    OUT a,b,c,d,e,f;
+
+    PARTS:
+    Not(in=dir, out=nd);
+    And(a=ff_f, b=dir, out=a1);
+    And(a=ff_b, b=nd, out=a2);
+    Or(a=a1, b=a2, out=da_raw);
+    And(a=da_raw, b=reset, out=da_notreset);
+    Not(in=reset, out=nrst);
+    And(a=da_raw, b=nrst, out=da);
+    DFF(in=da, out=ff_a, out=a);
+
+    And(a=ff_a, b=dir, out=b1);
+    And(a=ff_c, b=nd, out=b2);
+    Or(a=b1, b=b2, out=db_raw);
+    And(a=db_raw, b=nrst, out=db);
+    DFF(in=db, out=ff_b, out=b);
+
+    And(a=ff_b, b=dir, out=c1);
+    And(a=ff_d, b=nd, out=c2);
+    Or(a=c1, b=c2, out=dc_raw);
+    And(a=dc_raw, b=nrst, out=dc);
+    DFF(in=dc, out=ff_c, out=c);
+
+    And(a=ff_c, b=dir, out=d1);
+    And(a=ff_e, b=nd, out=d2);
+    Or(a=d1, b=d2, out=dd_raw);
+    And(a=dd_raw, b=nrst, out=dd);
+    DFF(in=dd, out=ff_d, out=d);
+
+    And(a=ff_d, b=dir, out=e1);
+    And(a=ff_f, b=nd, out=e2);
+    Or(a=e1, b=e2, out=de_raw);
+    And(a=de_raw, b=nrst, out=de);
+    DFF(in=de, out=ff_e, out=e);
+
+    And(a=ff_e, b=dir, out=f1);
+    And(a=ff_a, b=nd, out=f2);
+    Or(a=f1, b=f2, out=df_raw);
+    Or(a=df_raw, b=reset, out=df);
+    DFF(in=df, out=ff_f, out=f);
+}
